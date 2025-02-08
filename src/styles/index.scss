@@ -1,0 +1,128 @@
+@tailwind components;
+@tailwind base;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import '../../node_modules/antd/dist/reset.css';
+
+:root {
+  // COLOR
+  --color-primary: #6d9ed9;
+  --color-primary-disabled: #c4d3dd;
+  --color-primary-dark: #129191;
+  --color-primary-dark-disabled: #85a3a3;
+  --color-body: #495057;
+  --color-error: #f46a6a;
+  --color-error-medium: #f46a6a33;
+  --color-error-light: #f46a6acc;
+  --color-right-layout: #fff;
+  --color-input-bg: #ffebf0;
+
+  // Gradient
+  --color-gradient: linear-gradient(var(--color-primary), var(--color-primary-dark));
+  --color-gradient-result: linear-gradient(#a9f1df, #ffbbbb);
+
+  // FORM-ITEM
+  --formItem-label-color: var(--color-body);
+
+  // FONTS
+  --default-font-family: 'Poppins', sans-serif;
+}
+
+@layer components {
+  // button styling
+  .button {
+    @apply text-white rounded-md shadow-xl;
+    &:hover {
+      border: 1px solid var(--color-primary) !important ;
+      background-color: var(--color-primary-dark) !important;
+    }
+  }
+}
+
+html,
+body {
+  margin: 0px;
+  height: 100%;
+  font-family: var(--default-font-family);
+}
+
+.h-screen::-webkit-scrollbar {
+  display: none;
+}
+
+.h-screen {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* overriding modal btn style */
+.modalBtn .ant-btn-primary {
+  color: white !important;
+  border: 1px solid var(--color-primary-dark) !important ;
+  background-color: var(--color-primary-dark) !important;
+}
+/* overriding modal btn style */
+.modalBtn .ant-btn-default {
+  color: var(--color-primary-dark) !important;
+  border: 1px solid var(--color-primary-dark) !important ;
+  background-color: white !important;
+}
+
+/* overriding switch inactive bg style */
+.ant-switch .ant-switch-inner {
+  background-color: var(--color-error-light) !important;
+}
+
+/* overriding switch active bg style */
+.ant-switch.ant-switch-checked .ant-switch-inner {
+  background-color: var(--color-error-light) !important;
+}
+
+.kids-bg {
+  background: url(/assets/images/kids-bg.png);
+  background-repeat: no-repeat;
+  background-size: 80%;
+  background-position: left bottom;
+}
+
+.genkwiz-bg {
+  background: url(/assets/images/genkwiz-bg.png);
+  background-repeat: no-repeat;
+  background-size: 60vw;
+  background-position: 15vw 45vh;
+  background-blend-mode: lighten;
+}
+
+.card-shadow {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px, rgba(17, 17, 26, 0.05) 0px 8px 32px;
+}
+
+.children-rounded-lg img {
+  border-radius: 0.5rem;
+  margin: auto;
+}
+
+.select-none {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+@media screen and (max-width: 480px) {
+  .kids-bg {
+    background-size: 200%;
+  }
+  .genkwiz-bg {
+    background-size: 220%;
+    background-position: 50% 80%;
+  }
+}
+
+a {
+color: var(--color-primary);
+text-decoration: underline 2px;
+}
